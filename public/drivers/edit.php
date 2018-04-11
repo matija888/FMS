@@ -37,11 +37,11 @@
 	</div>
 	<article>
 		<h1>Izmeni podatke postojeceg vozača</h1>
+		<?php echo display_errors($errors); ?>
 		<form action="<?php echo url_for('edit-drivers/' . h(u($driver->id)) ); ?>" method="post">
 			<?php include(SHARED_PATH . '/templates/driver_form_fields.php'); ?>		
 			<input type="submit" value="Izmeni korisnika" class="btn">	
 		</form>
-		<?php echo display_errors($errors); ?>
 	</article>
 </div><!-- kraj main-a -->
 
