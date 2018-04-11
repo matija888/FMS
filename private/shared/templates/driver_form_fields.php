@@ -44,7 +44,7 @@
 <label for="vehicle_id">Vozilo koje zadužuje</label>
 <select name="driver[vehicle_id]" id="vehicle_id">
 	<?php
-		$vehicles = Vehicle::get_available_vehicles();
+		$vehicles = Vehicle::get_available_vehicles($driver->vehicle_id);
 		if(!empty($vehicles)) {
 			foreach ($vehicles as $vehicle) {
 				echo "<option value=\"{$vehicle->id}\">";

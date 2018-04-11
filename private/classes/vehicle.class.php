@@ -76,12 +76,12 @@ class Vehicle extends DatabaseObject {
 		return !empty($object_array) ? array_shift($object_array) : false;
 	}
 
-	public static function get_available_vehicles() {
+	public static function get_available_vehicles($current_vehicle) {
+
 		$sql = "SELECT vehicles.id, reg_plate FROM vehicles ";
-		$sql .= "LEFT JOIN drivers_vehicles ON drivers_vehicles.vehicle_id = vehicles.id ";
-		$sql .= "LEFT JOIN drivers ON drivers_vehicles.driver_id = drivers.id ";
-		$sql .= "WHERE vehicle_id IS NULL";
-		// echo $sql;
+		$sql .= "LEFT JOIN drivers_vehicles ON vehicles.id = drivers_vehicles.vehicle_id ";
+		$sql .= "WHERE id = '" . self::$db->db_escape($current_vehicle) . "' OR vehicle_id IS NULL";
+	
 		return static::find_by_sql($sql);
 	}
 
