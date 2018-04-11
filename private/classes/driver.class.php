@@ -78,6 +78,7 @@ class Driver extends DatabaseObject {
 	public function update() {
 
 		$result = parent::update();
+		
 		if($result) {
 			if($this->vehicle_id == '0') {
 
@@ -90,12 +91,13 @@ class Driver extends DatabaseObject {
 
 			} else {
 
-				$sql = "SELECT COUNT(*) FROM drivers_vehicles ";
+				$sql = "SELECT COUNT(*) AS driver_count FROM drivers_vehicles ";
 				$sql .= "WHERE driver_id = '" . $this->id . "'";
 
-				$driver_count = self::$db->query($sql);
-
-				if($driver_count == '1') {
+				$result = self::$db->query($sql);
+				$driver_count = (int)self::$db->fetch_assoc($result);
+				
+				if($driver_count === 1) {
 					$sql = "UPDATE drivers_vehicles ";
 					$sql .= "SET ";
 					$sql .= "vehicle_id = '" . self::$db->db_escape($this->vehicle_id) . "' ";
@@ -103,6 +105,7 @@ class Driver extends DatabaseObject {
 					$sql .= "LIMIT 1";
 					
 					$result = self::$db->query($sql);
+					
 				} else {
 					$sql = "INSERT INTO drivers_vehicles ";
 					$sql .= "(driver_id, vehicle_id) ";
@@ -113,7 +116,6 @@ class Driver extends DatabaseObject {
 
 					$result = self::$db->query($sql);
 				}
-
 			}
 		}
 
