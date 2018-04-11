@@ -54,7 +54,6 @@ class Vehicle extends DatabaseObject {
 	protected function validate() {
 		$this->errors = [];
 
-		// write validation here for vehicle
 		// validate reg plate
 		if(is_blank($this->reg_plate)) {
 			$this->errors[] = "Polje registraciona oznaka ne sme biti prazno";

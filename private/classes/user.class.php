@@ -138,7 +138,6 @@ class User extends DatabaseObject {
 		if($this->password_sent) {
 			//pasword
 			// Password must contain at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 special sign
-			// TODO - when you learn reg ex, come back here and write some email validation code
 			if(is_blank($this->password)) {
 				$this->errors[] = 'Password cannot be blank.';
 			} elseif(!has_length($this->password, ['min' => 12])) {
