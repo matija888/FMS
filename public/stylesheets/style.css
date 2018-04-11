@@ -1,0 +1,644 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	margin:0;
+	padding:0;
+	background-image:url(../images/background.png);
+	font-family:Arial, sans-serif;
+}
+
+/* ----------------------------LAYOUT ELEMENTS -------------------------*/
+#wrapper {
+	width:1300px;
+	margin:0 auto;
+	background-color:#D8D8D8;
+}
+#header {
+	overflow:hidden;
+	background-color:#D8D8D8;
+	border-bottom:#737373 5px solid;
+}
+#front {
+	margin-bottom:10px;
+}
+#main {
+	float:left;
+	width:925px;
+	margin-left:15px;
+	overflow:hidden;
+}
+#main h3 {
+	border-bottom: 2px solid #A6A6A6;
+	margin: 5px 0;
+}
+#sidebar {
+	float:left;
+	width:320px;
+	min-height:700px;
+	padding:15px;
+	background-color:#A6A6A6;
+	margin-bottom:10px;
+	/*margin-right:10px;*/
+}
+#nav {
+	width:600px;
+	float:left;
+}
+article {
+	float:none;
+}
+
+/* ------------------------- END OF LAYOUT ELEMENTS -------------------------*/
+
+
+
+/* -------------------------- HEADERS AND PARAGRAPH STYLE ----------------------------------*/
+
+h1 { font-size:28px; }
+h2 { font-size:26px; }
+h3 { font-size:24px; color: #464739;}
+h4 { font-size:22px;}
+h5 { font-size:20px;}
+h6 { font-size:18px;}
+#main h1,
+#main h2 {
+	font-size:32px;
+	border-bottom:2px solid #737373;
+}
+#sidebar h1,
+#sidebar h2 {
+	font-size:32px;
+	border-bottom:2px solid #938081;
+}
+p {
+	font-size: 20px;
+	color: #464739;
+}
+span {
+	/*color: #464739*/
+}
+/* ------------------------END OF HEADERS AND PARAGRAPH STYLE ---------------------------------- */
+
+
+
+/* ------------------------ LINKS STYLE ------------------------------------------ */
+a:link,
+a:visited {
+	color:#921113;
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:underline;
+}
+a:active {
+	color:#493E3E;
+}
+a.padding_right {
+	padding-right:25em;
+}
+.action {
+	margin: 10px;
+	padding: 10px;
+	background-color: white;
+	border-radius: 28px;
+}
+.action a {
+	color: white;
+}
+.action .back {
+	color: #921113;
+}
+a.btn {
+	color: white;
+}
+/* ------------------------END OF LINKS STYLE ------------------------------------------ */
+
+
+
+/* -------------------------- IMAGES STYLE --------------------------------------------- */
+img {
+	vertical-align:bottom;
+	margin:0 auto;
+}
+#header #app_logo img {
+	height:80px;
+	float:right;
+}
+#company_logo {
+	float:left;
+	border-right:solid 1px rgba(73,73,73,0.2);
+	width:348px;
+}
+div.vehicle_img {
+	width:160px;
+	border:solid 1px #fff;
+	float:left;
+}
+/* --------------------------END OF IMAGES STYLE --------------------------------------------- */
+
+
+/* ----------------------------- NAVIGATION ------------------------------------------- */
+
+#nav ul {
+	list-style:none;
+	margin:0px;
+	padding:0px;
+}
+#nav ul li {
+	float:left;
+	position:relative;
+	text-align:right;
+}
+#nav ul li a {
+	display:block;
+	padding:30px 15px;
+	height:20px;
+	font-weight:bold;
+	text-transform:uppercase;
+	text-decoration:none;
+}
+
+#nav ul li a:link,
+#nav ul li a:visited {
+	color:#737373;
+}
+#nav ul li a:hover {
+	background-color:#988D8D;
+	color:#292121;
+}
+#nav ul li a:active {
+	color:#363232;
+}
+
+#nav ul li ul {
+	background-color:rgba(98,98,98,0.8);
+	position:absolute;
+	top:80px;
+	left:0;
+	width:100%;
+	display:none;
+	font-size:11px;
+}
+#nav ul li ul li {
+	float:none;
+	color:white;
+	text-align:left;
+}
+#nav ul li ul li a {
+	height:30px;
+	padding:10px 25px 10px 10px;
+}
+#nav ul li ul li a:link,
+#nav ul li ul li a:visited {
+	color:#ffffff;
+}
+#nav ul li:hover>ul {
+	display:block;
+}
+#nav ul li ul li ul {
+	left:100%;
+	top:0;
+	display:none;
+}
+#nav ul li ul li ul li a {
+	height:30px;
+	padding:0;
+	vertical-align:middle;
+	line-height:30px;
+}
+#sidebar ul {
+	list-style:none;
+	margin:0px;
+	padding:0px;
+}
+
+/* ---------------------------END OF NAVIGATION ------------------------------------- */
+
+
+
+
+/* - ------------------------------- ELEMENT DIV ------------------------------------*/
+.element {
+	float:left;
+	width:275px;
+	height:220px;
+	margin: 10px 15px 15px 0;
+	padding:10px;
+	background-image: url(../images/bg.jpg);
+	position:relative;
+	border-radius: 10px;
+}
+.element_search {
+	float:left;
+	width:260px;
+	height:260px;
+	margin: 0 15px 15px 0;
+	padding:5px;
+	background-color:#ffffff;
+	position:relative;
+}
+.element_search:nth-of-type(3n) {
+	margin-right:0;
+}
+.element input{
+	width:100px;
+}
+.element:nth-of-type(3n) {
+	margin-right:0;
+}
+
+.element img {
+	width:70px;
+	height:70px;
+	overflow:hidden;
+}
+.element #user_info {
+	display: inline-block;
+	float: right;
+	margin-left: 5px;
+	height:30px;
+	width:30px;
+}
+.element #delete {
+	display: inline-block;
+	float: right;
+	margin-left: 5px;
+	height:30px;
+	width:30px;
+}
+.element #edit {
+	display: inline-block;
+	float: right;
+	margin-left: 5px;
+	height:30px;
+	width:30px;
+}
+
+.small-element {
+	border:1px solid #464739;
+	width:120px;
+	height: 100px;
+	text-align: center;
+	/*background-color: #A6A6A6;*/
+	background-image: url(../images/bg.jpg);
+	border-radius: 5px;
+	padding: 5px;
+	float: left;
+	margin-right: 15px;
+}
+.small-element img {
+	display: inline-block;
+	height: 60px;
+}
+.small-element span {
+	display: block;
+	font-size: 14px;
+	color: black;
+}
+.superadmin, .specialist, .administrator {
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+
+/* - -------------------------------END OF ELEMENT DIV ------------------------------------*/
+
+
+
+
+/* -----------------------------ERRORS STYLE ------------------------------------------ */
+.error {
+	display: block;
+	border: solid red 1px;
+	background: white;
+	color: red;
+	font-weight: bold;
+}
+.error ul {
+	list-style: none;
+}
+
+.message {
+	display: block;
+	border: solid blue 1px;
+	background: lightblue;
+}
+.message ul {
+	list-style: none;
+}
+.attention {
+	border: solid red 1px;
+	background: white;
+	color: red;
+	font-weight: bold;
+	padding: 5px;
+}
+/* ---------------------------END OF ERRORS STYLE ------------------------------------- */
+
+
+
+/* ---------------------------FORMS STYLE -------------------------------------------- */
+form {
+	width: 400px;
+	font-size: 13px;
+}
+
+form .btn {
+	margin: 10px 0;
+	width: 150px;
+	font-weight: bold;
+	color: white;
+}
+
+form .btn:hover {
+	color:white;
+}
+
+input {
+	font-family: inherit;
+	font-size: 100%;
+}
+
+input, textarea, select {
+	--webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+	width: 245px;
+	padding: 5px;
+	margin: 5px 0;
+	border-radius: 7px;
+	background-color: #fdedec;
+}
+label {
+	display: inline-block;
+	background-color: #eee;
+	width: 125px;
+	padding: 5px;
+	border-radius: 5px;
+}
+input.ng-invalid {
+	background-color:lightblue;
+}
+input#main {
+	width:200px;
+}
+select>label, select> {
+	display: block;
+}
+
+
+/* ADMIN LOGIN FORM */
+.widget {
+	width: 100%;
+}
+.widget {
+    margin-bottom:20px;
+}
+.widget h2 {
+    margin:0 0 10px 0;
+    padding:0 5px;
+    font-weight:normal;
+    border-bottom:1px solid #ddd;
+}
+.widget .inner {
+    margin:0 10px;
+}
+.widget input {
+	width:100%;
+}
+
+
+/* ---------------------------END OF FORMS STYLE ------------------------------------- */
+
+
+
+
+/* ---------------------------TABLES STYLE ------------------------------------- */
+table.vehicles td .vehicle_edit {
+	float:right;
+}
+table.user, table.vehicles{
+	font-size:12px;
+	color:#333333;
+	width:100%;
+	border-width: 1px;
+	border-color: #729ea5;
+	border-collapse: collapse;
+}
+table.user th, table.vehicles th {
+	font-size:14px;
+	/*width:300px;*/
+	background-color:#acc8cc;
+	border-width: 1px;
+	padding: 10px 4px;
+	border-style: solid;
+	border-color: #729ea5;
+	text-align:left;
+	text-align: center;
+}
+#tabela th {
+	width: 50%;
+}
+table.user tr {
+	background-color:#d4e3e5;
+}
+table.user td, table.vehicles td {
+	font-size:14px;
+	border-width: 1px;
+	padding: 5px;
+	height: 20px;
+	border-style: solid;
+	border-color: #729ea5;
+	overflow:hidden;
+}
+table.user td a, table.vehicles td a {
+	display: block;
+	text-align: center;
+}
+table.user td img.driver {
+	float:left;
+	width:50px;
+}
+.btn {
+  background: #BFBFBF;
+  background-image: -webkit-linear-gradient(top, #BFBFBF, #737373);
+  background-image: -moz-linear-gradient(top, #BFBFBF, #737373);
+  background-image: -ms-linear-gradient(top, #BFBFBF, #737373);
+  background-image: -o-linear-gradient(top, #BFBFBF, #737373);
+  background-image: linear-gradient(to bottom, #BFBFBF, #737373);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #fff;
+  font-size: 15px;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+/* ---------------------------END OF TABLES STYLE ------------------------------------- */
+
+
+
+
+/* ---------------------------OTHER STYLE ------------------------------------- */
+span.arrow {
+	background:url(../img/strelica.png) no-repeat left;
+	display: block;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	right: 15px;
+	top: 20px;
+	text-indent: -999em;
+}
+/*SCHEDULE DIV*/
+.schedule{
+	float:left;
+	width:420px;
+}
+#app_logo {
+	width:250px;
+	float:right;
+	height:80px;
+}
+
+.info {
+	color:lightblue;
+	font-weight:bold;
+}
+#footer {
+	background-color:#AF9C9C;
+	clear:both;
+	padding:20px;
+}
+#footer p {
+	margin:0;
+	text-align:center;
+}
+
+
+/*pomocne klase*/
+.block {
+	overflow:hidden;
+}
+.left {
+	float:left;
+	margin:0 7px 3px 0;	
+}
+.right {
+	float:right;
+	margin:0 0 3px 7px;	
+}
+
+.intro-text {
+	padding-right:320px;
+}
+.vest {
+	width:410px;
+	margin-right:20px;
+	float:left;
+}
+.vest:nth-of-type(2) {
+	margin-right:0;
+}
+.vest h3 {
+	color:#737373;
+	font-size:20px;
+}
+#tags ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+#tags ul li a {
+	float:left;
+	background-color:#C9A2A3;
+	padding:5px;
+	margin:0 7px 4px 0;
+	text-decoration:none;
+}
+#tags ul li a:link,
+#tags ul li a:visited {
+	color:#fff;
+}
+#tags ul li a:hover {
+	background-color:#921113;
+}
+#tags ul li a:active{
+	color:#000;
+}
+
+div#right {
+	float:right;
+}
+.admin_table {
+	border-spacing: 10px;
+    border-collapse: separate;
+}
+
+div.vehicle {
+	width:666px;
+	border:solid 1px #fff;
+	float:left;
+}
+/* ---------------------------END OF OTHER STYLE ------------------------------------- */
+
+
+
+/* --------------------------- SESSION MESSAGES STYLE ------------------------------------- */
+#message {
+  color: #0055DD;
+  background: white;
+  border: 2px solid #0055DD;
+  padding: 1em 15px;
+  margin: 1em 30px;
+  width: inherit;
+}
+/* ---------------------------END OF SESSION MESSAGES STYLE ------------------------------------- */
+
+
+/* --------------------------- PAGINATION ------------------------------------- */
+
+.pagination {
+  margin: 1em 0;
+  float: both;
+}
+
+.pagination a, .pagination span {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.pagination span.selected {
+  font-weight: bold;
+  color: #000;
+}
+/* ---------------------------END OF PAGINATION ------------------------------------- */
+
+
+dl {
+  clear: both;
+  overflow: hidden;
+  margin: 0.5em 0;
+}
+
+dt {
+  float: left;
+  width: 125px;
+}
+
+dd {
+  float: left;
+  margin-left: 1em;
+}

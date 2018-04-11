@@ -1,0 +1,38 @@
+#ErrorDocument 404 "Ova stranica nije pronađena"
+ErrorDocument 404 /FMS/public/admins/index.php
+ErrorDocument 401 "AHa pokusao si ali uspeti neces"
+ErrorDocument 403 "Nema listanja foldera no-no"
+
+#AuthUserFile c:/wamp64/www/FMS/.htpasswd
+#AuthType Basic
+#AuthName "Molimo vas da unesete korisničko ime"
+#Require valid-user
+
+Options -Indexes
+
+RewriteEngine On
+
+RewriteRule	^login$													public/admins/login.php [NC,L]
+RewriteRule	^public/login$											public/admins/login.php [NC,L]
+RewriteRule	^public/logout$											public/admins/logout.php [NC,L]
+
+RewriteRule	^public/search-admin$									public/admins/search.php [NC,L]
+RewriteRule	^public/display-by-position$							public/admins/display_by_position.php [NC,L]
+
+RewriteRule	^public/(vehicles|drivers|admins)$						public/$1/index.php?$1-widget [NC,L]
+
+RewriteRule	^public/(vehicles|drivers|admins)&page=(\d+)$			public/$1/index.php?$1-widget&page=$2 [NC,L]
+
+RewriteRule	^public/(vehicles|drivers|admins)/(\d+)$				public/$1/show.php?$1-widget&id=$2 [NC,L]
+RewriteRule	^public/edit-(vehicles|drivers|admins)/(\d+)$			public/$1/edit.php?$1-widget&id=$2 [NC,L]
+RewriteRule	^public/delete-(vehicles|drivers|admins)/(\d+)$			public/$1/delete.php?$1-widget&id=$2 [NC,L]
+RewriteRule	^public/insert-(vehicles|drivers|admins)$				public/$1/new.php?$1-widget& [NC,L]
+RewriteRule	^public/search-(vehicles|drivers|admins)$				public/$1/search.php?$1-widget [NC,L]
+
+RewriteRule	^public/reg-expiration$									public/vehicles/reg_expiration.php?vehicles-widget [NC,L]
+
+
+
+
+
+
