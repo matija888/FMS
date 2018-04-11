@@ -119,12 +119,18 @@ class DatabaseObject {
 
 		$attributes = $this->escape_attributes_value();
 
+		$this->validate();
+
+		if(!empty($this->errors)) { 
+			return false;
+		}
+
 		$sql = "INSERT INTO " . static::$table_name . " (";
 		$sql .= implode(', ', array_keys($attributes));
 		$sql .= ") VALUES ('";
 		$sql .= implode("', '", array_values($attributes));
 		$sql .= "');";
-		echo $sql;
+		// echo $sql;
 		$result = self::$db->query($sql);
 		// echo $result;
 
