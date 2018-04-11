@@ -51,13 +51,33 @@ class Vehicle extends DatabaseObject {
 		return self::$make_names;
 	}
 
-	// public_function validate() {
-	// 	$this->errors = [];
+	protected function validate() {
+		$this->errors = [];
 
 		// write validation here for vehicle
+		// validate reg plate
+		if(is_blank($this->reg_plate)) {
+			$this->errors[] = "Polje registraciona oznaka ne sme biti prazno";
+		} elseif( !( strpos($this->reg_plate, 'BG ') == 0 && has_inclusion_of(strpos($this->reg_plate, '-'), [6,7]) ) ) {
+			$this->errors[] = "Registraciona oznaka mora biti sledećeg formata BG 123-AB ili BG 1234-AB";
+		}
 
-	// 	return $this->errors;
-	// }
+		// validate rest input - check if some inputs is blank
+		if(is_blank($this->model)) {
+			$this->errors[] = "Polje model ne sme biti prazno";
+		}
+		if(is_blank($this->engine)) {
+			$this->errors[] = "Polje tip motora ne sme biti prazno";
+		}
+		if(is_blank($this->kilometrage)) {
+			$this->errors[] = "Polje kilometraza ne sme biti prazno";
+		}
+		if(is_blank($this->prod_year)) {
+			$this->errors[] = "Polje godina proizvodnje ne sme biti prazno";
+		}
+
+		return $this->errors;
+	}
 
 	static public function find_all() {		
 		$sql = "SELECT * FROM " . static::$table_name . " ";
