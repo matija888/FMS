@@ -109,12 +109,6 @@ class DatabaseObject {
 		}
 	}
 
-	// protected function validate() {
-	// 	$this->errors = [];
-	// 	// validation which can be used for every child class
-	// 	return $this->errors;
-	// }
-
 	public function insert() {
 
 		$attributes = $this->escape_attributes_value();
