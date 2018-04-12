@@ -103,27 +103,7 @@ class User extends DatabaseObject {
 	protected function validate() {
 		$this->errors = [];
 
-		// first name
-		if(is_blank($this->first_name)) {
-			$this->errors[] = 'First Name cannot be blank.';
-		} elseif(!has_length($this->first_name, ['min' => 2, 'max' => 45])) {
-			$this->errors[] = 'First Name must be between 2 and 45 charackters long.';
-		}
-
-		// last name
-		if(is_blank($this->last_name)) {
-			$this->errors[] = 'Last Name cannot be blank.';
-		} elseif(!has_length($this->last_name, ['min' => 2, 'max' => 45])) {
-			$this->errors[] = 'Last Name must be between 2 and 255 charackters long.';
-		}
-
-		// email
-			
-		if(is_blank($this->email)) {
-			$errors[] = 'Email cannot be blank.';
-		} elseif(!has_valid_email_format($this->email)) {
-			$errors[] = 'Email must have a valid email format.';
-		}
+		parent::validate();
 		
 		// username
 		$current_id = isset($this->id) ? $this->id : 0;

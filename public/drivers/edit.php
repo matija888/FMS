@@ -9,10 +9,11 @@
 		redirect_to(url_for('drivers'));
 	}
 
-	if(is_post_request()){
+	if(is_post_request()) {
 
 		$args = h_args($_POST['driver']);
-
+		// var_dump($args);
+		// exit();
 		$driver->change_attributes($args);
 		
 		$result = $driver->update();

@@ -122,26 +122,6 @@ class Driver extends DatabaseObject {
 		return $result;
 	}
 
-	protected function validate() {
-		$this->errors = [];
-
-		// first name
-		if(is_blank($this->first_name)) {
-			$this->errors[] = 'First Name cannot be blank.';
-		} elseif(!has_length($this->first_name, ['min' => 2, 'max' => 45])) {
-			$this->errors[] = 'First Name must be between 2 and 45 charackters long.';
-		}
-
-		// last name
-		if(is_blank($this->last_name)) {
-			$this->errors[] = 'Last Name cannot be blank.';
-		} elseif(!has_length($this->last_name, ['min' => 2, 'max' => 45])) {
-			$this->errors[] = 'Last Name must be between 2 and 255 charackters long.';
-		}
-
-		return $this->errors;
-	}
-
 	static public function find_by_first_name($first_name) {
 		
 		$sql = "SELECT * FROM drivers ";
