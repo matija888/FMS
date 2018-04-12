@@ -10,13 +10,13 @@
 				<td><?php echo $admin->full_name(); ?></td>
 			</tr>
 			<tr>
-				<td><b>Username:</b></td>
+				<td><b>Korisničko ime:</b></td>
 				<td><?php echo $admin->username; ?></td>
 			</tr>
 		</table>
 		<div>
 			<div class="btn" onclick="location.href='<?php echo url_for('drivers'); ?>'">Upravljanje vozacima baze</div>
-			<div class="btn" onclick="location.href='<?php echo url_for('drivers/search.php'); ?>'">Pretraga vozača</div>
+			<div class="btn" onclick="location.href='<?php echo url_for('search-drivers'); ?>'">Pretraga vozača</div>
 			<div class="btn" onclick="location.href='<?php echo url_for('logout'); ?>';">Odjava</div>
 		</div>
 	</div>

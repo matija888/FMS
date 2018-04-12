@@ -1,7 +1,7 @@
 function ajaxSearch() {
 
 	$.ajax({
-		url: "json_vehicles.php",
+		url: "vehicles/json_vehicles.php",
 		type: "POST",
 		dataType: "json"
 	}).done(successFn).fail(errorFn);
@@ -46,9 +46,9 @@ function successFn(jsonResult) {
 			html += "<td>"+vehicle.fuel_type+"</td>";
 			html += "<td>"+vehicle.reg_date+"</td>";
 			html += "<td>"+vehicle.prod_year+"</td>";
-			html += "<td><a href=\"show.php?vehicle_widget&id="+vehicle.id+"\"><img src=\"../images/info.png\" alt=\"\"></a></td>";
-			html += "<td><a href=\"edit.php?vehicle_widget&id="+vehicle.id+"\"><img src=\"../images/edit.png\" alt=\"\"></a></td>";
-			html += "<td><a href=\"delete.php?vehicle_widget&id="+vehicle.id+"\"><img src=\"../images/delete.png\" alt=\"\"></a></td>";
+			html += "<td><a href=\"vehicles/show.php?vehicles-widget&id="+vehicle.id+"\"><img src=\"images/info.png\" alt=\"\"></a></td>";
+			html += "<td><a href=\"vehicles/edit.php?vehicles-widget&id="+vehicle.id+"\"><img src=\"images/edit.png\" alt=\"\"></a></td>";
+			html += "<td><a href=\"vehicles/delete.php?vehicles-widget&id="+vehicle.id+"\"><img src=\"images/delete.png\" alt=\"\"></a></td>";
 			html += "</tr>";
 		}
 

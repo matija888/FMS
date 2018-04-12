@@ -1,7 +1,7 @@
 function ajaxSearch() {
 
 	$.ajax({
-		url: "json_drivers.php",
+		url: "drivers/json_drivers.php",
 		type: "POST",
 		dataType: "json"
 	}).done(successFn).fail(errorFn);
@@ -36,9 +36,9 @@ function successFn(jsonResult) {
 			html += "<td>"+driver.first_name + " "+ driver.last_name +"</td>";
 			html += "<td>"+driver.position_name+"</td>";
 			html += "<td>"+driver.reg_plate+"</td>";
-			html += "<td><a href=\"show.php?drivers-widget&id="+driver.id+"\"><img src=\"../images/info.png\" alt=\"\"></a></td>";
-			html += "<td><a href=\"edit.php?drivers-widget&id="+driver.id+"\"><img src=\"../images/edit.png\" alt=\"\"></a></td>";
-			html += "<td><a href=\"delete.php?drivers-widget&id="+driver.id+"\"><img src=\"../images/delete.png\" alt=\"\"></a></td>";
+			html += "<td><a href=\"drivers/show.php?drivers-widget&id="+driver.id+"\"><img src=\"images/info.png\" alt=\"\"></a></td>";
+			html += "<td><a href=\"drivers/edit.php?drivers-widget&id="+driver.id+"\"><img src=\"images/edit.png\" alt=\"\"></a></td>";
+			html += "<td><a href=\"drivers/delete.php?drivers-widget&id="+driver.id+"\"><img src=\"images/delete.png\" alt=\"\"></a></td>";
 			html += "</tr>";
 		}
 

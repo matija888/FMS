@@ -13,9 +13,6 @@
 
 		$args = h_args($_POST['driver']);
 
-		// var_dump($args);
-		// exit();
-
 		$driver->change_attributes($args);
 		
 		$result = $driver->update();

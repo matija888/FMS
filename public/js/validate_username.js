@@ -5,6 +5,7 @@ function ajaxSearch() {
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", "ajax_search.php", true);
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	console.log(xhr);
 	xhr.onreadystatechange = function() {
 		if(xhr.readyState === 4) {
 

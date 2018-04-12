@@ -29,8 +29,7 @@ RewriteRule	^public/delete-(vehicles|drivers|admins)/(\d+)$			public/$1/delete.p
 RewriteRule	^public/insert-(vehicles|drivers|admins)$				public/$1/new.php?$1-widget& [NC,L]
 RewriteRule	^public/search-(vehicles|drivers|admins)$				public/$1/search.php?$1-widget [NC,L]
 
-RewriteRule	^public/reg-expiration$									public/vehicles/reg_expiration.php?vehicles-widget [NC,L]
-
+RewriteRule	^public/vehicles-reg-expiration$						public/vehicles/reg_expiration.php?vehicles-widget [NC,L]
 
 
 

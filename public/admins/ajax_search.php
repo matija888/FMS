@@ -11,6 +11,7 @@ if($username) {
 	$user = ($user !== false) ? $user : 'false';
 	echo json_encode($user);
 }
+// $first_name = 'Matija';
 if($first_name) {
 	$user = User::find_by_first_name($first_name);
 

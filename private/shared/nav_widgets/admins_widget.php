@@ -16,7 +16,7 @@
 		</table>
 		<div>
 			<div class="btn" onclick="location.href='<?php echo url_for('admins'); ?>'">Upravljanje administratorima</div>
-			<div class="btn" onclick="location.href='<?php echo url_for('admins/search.php'); ?>'">Pretraga administratora</div>
+			<div class="btn" onclick="location.href='<?php echo url_for('search-admins'); ?>'">Pretraga administratora</div>
 			<div class="btn" onclick="location.href='<?php echo url_for('display-by-position'); ?>'">Prikaz administratora po pozicijama</div>
 			<div class="btn" onclick="location.href='<?php echo url_for('logout'); ?>';">Logout</div>
 		</div>

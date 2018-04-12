@@ -166,7 +166,8 @@ class User extends DatabaseObject {
 
 	static public function find_by_first_name($first_name) {
 		
-		$sql = "SELECT * FROM ". static::$table_name . " ";
+		$sql = "SELECT id, first_name, last_name, username, email, position_name FROM ". static::$table_name . " ";
+		$sql .= "LEFT JOIN positions ON users.position_id = positions.position_id ";
 		$sql .= "WHERE first_name = '" . self::$db->db_escape($first_name) . "'";
 
 		return static::find_by_sql($sql);

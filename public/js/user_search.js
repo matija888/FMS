@@ -3,7 +3,7 @@ var first_name = $("#first_name");
 
 function ajaxSearch() {
 	$.ajax({
-		url: "ajax_search.php",
+		url: "admins/ajax_search.php",
 		type: "POST",
 		data: "first_name=" + first_name.val(),
 		dataType: "json"
@@ -13,7 +13,10 @@ function ajaxSearch() {
 		html = "";
 		admin_id = jsonResult.admin_id;
 		admin_status = jsonResult.admin_status;
+
 		var usersArray = jsonResult.user;
+		
+		// console.log(usersArray);
 		
 		if(usersArray !== 'undefined' || usersArray.length !== 0) {
 			displayUser(usersArray);
@@ -25,20 +28,28 @@ function ajaxSearch() {
 	function displayUser(usersArray) {
 		
 		for(var user in usersArray) {
+
 			var user = usersArray[user];
+			// console.log(user);
 			html += "<div class=\"element\">";
-			if(admin_id != user.id || admin_status != 2) {
-				html += "<a href=\"show.php?admins-widget&id="+user.id+"\">";
-				html += "<img id=\"user_info\" src=\"../images/info.png\" alt=\"\"></a>";
-
-				html += "<a href=\"edit.php?admins-widget&id="+user.id+"\">";
-				html += "<img id=\"edit\" src=\"../images/edit.png\" alt=\"\"></a>";
-
+			if(admin_status == 2 && admin_id !== user.id) {
+				console.log(admin_id);
+				console.log(user.id);
 				html += "<a href=\"delete.php?admins-widget&id="+user.id+"\">";
-				html += "<img id=\"delete\" src=\"../images/delete.png\" alt=\"\"></a>";
+				html += "<img id=\"delete\" src=\"images/delete.png\" alt=\"\"></a>";
 			}
+
+			
+			if(admin_status == 2) {
+				html += "<a href=\"edit.php?admins-widget&id="+user.id+"\">";
+				html += "<img id=\"edit\" src=\"images/edit.png\" alt=\"\"></a>";
+			}
+
+			html += "<a href=\"show.php?admins-widget&id="+user.id+"\">";
+			html += "<img id=\"user_info\" src=\"images/info.png\" alt=\"\"></a>";
+
 			html += "";
-			html += "<img src=\"../images/admins/"+user.id+".jpg\" alt=\"\">";
+			html += "<img src=\"images/admins/"+user.id+".jpg\" alt=\"\">";
 			html += "<div id=\"tabela\"><table class=\"user\"><tr><td>Korisnicko ime:</td>";
 			html += "<td>"+user.first_name+"</td>";
 			html += "</tr><tr><td>Ime i prezime:</td>";
