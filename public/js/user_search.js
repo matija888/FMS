@@ -33,19 +33,19 @@ function ajaxSearch() {
 			// console.log(user);
 			html += "<div class=\"element\">";
 			if(admin_status == 2 && admin_id !== user.id) {
-				console.log(admin_id);
-				console.log(user.id);
-				html += "<a href=\"delete.php?admins-widget&id="+user.id+"\">";
+				// console.log(admin_id);
+				// console.log(user.id);
+				html += "<a href=\"admins/delete.php?admins-widget&id="+user.id+"\">";
 				html += "<img id=\"delete\" src=\"images/delete.png\" alt=\"\"></a>";
 			}
 
 			
 			if(admin_status == 2) {
-				html += "<a href=\"edit.php?admins-widget&id="+user.id+"\">";
+				html += "<a href=\"admins/edit.php?admins-widget&id="+user.id+"\">";
 				html += "<img id=\"edit\" src=\"images/edit.png\" alt=\"\"></a>";
 			}
 
-			html += "<a href=\"show.php?admins-widget&id="+user.id+"\">";
+			html += "<a href=\"admins/show.php?admins-widget&id="+user.id+"\">";
 			html += "<img id=\"user_info\" src=\"images/info.png\" alt=\"\"></a>";
 
 			html += "";

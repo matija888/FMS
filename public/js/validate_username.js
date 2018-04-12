@@ -3,15 +3,14 @@ var pContainer = document.getElementById("ajax-error");
 
 function ajaxSearch() {
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", "ajax_search.php", true);
+	xhr.open("POST", "http://localhost/FMS/public/admins/ajax_search.php", true);
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	console.log(xhr);
+	// console.log(xhr);
 	xhr.onreadystatechange = function() {
-		if(xhr.readyState === 4) {
+		if(xhr.readyState == 4 && xhr.status == 200) {
 
 			var response = xhr.responseText;
-			
-			if(response === 'true') {
+			if(response == "false") {
 				username.style.backgroundColor = '#ff6666';
 				pContainer.style = "border: solid red 1px;background: white;color: red;font-weight: bold;padding:5px;";
 				pContainer.innerHTML = "Korisnicko ime je zauzeto";
@@ -26,14 +25,13 @@ function ajaxSearch() {
 
 			}
 		}
-		
 	}
-
+	// console.log(username.value);
 	xhr.send("username=" + username.value);
 }
 
 $("input").focus(function() {
 	$(this).css("backgroundColor", "lightblue").focusout(function() {
 		$(this).css("backgroundColor", "");
-	})
+	});
 });

@@ -6,12 +6,11 @@ $username = isset($_POST['username']) ? h($_POST['username']) : '';
 
 $first_name = isset($_POST['first_name']) ? h($_POST['first_name']) : '';
 
-if($username) {
-	$user = User::find_by_username($username);
-	$user = ($user !== false) ? $user : 'false';
-	echo json_encode($user);
+if(has_presence($username)) {
+	$result = has_unique_username($username) ? true : false;
+	echo json_encode($result);
 }
-// $first_name = 'Matija';
+
 if($first_name) {
 	$user = User::find_by_first_name($first_name);
 

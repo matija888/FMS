@@ -5,6 +5,7 @@
 
 	$id = h($_GET['id']);
 	$user = User::find_by_id($id);
+	
 	if($user === false) {
 		redirect_to(url_for('admins'));
 	}

@@ -11,8 +11,6 @@ $("document").ready(function() {
 	document.querySelector("#display_all").addEventListener('change', function(event) {
 		updateRegView("display_all", event.target.checked);
 	});
-
-	
 	
 	function updateRegView(dayValue, visibility) {
 		// console.log(dayValue);
@@ -36,7 +34,7 @@ $("document").ready(function() {
 		}
 
 		$.ajax({
-			url: "json_vehicles.php",
+			url: "vehicles/json_vehicles.php",
 			type: "GET",
 			dataType: "json"
 		}).done(successFn).fail(errorFn);
@@ -93,9 +91,9 @@ $("document").ready(function() {
 				html += "<td>"+vehicle.engine+"</td>";
 				html += "<td>"+vehicle.fuel_type+"</td>";
 				html += "<td>"+vehicle.prod_year+"</td>";
-				html += "<td><a href=\"show.php?vehicle_widget&id="+vehicle.id+"\"><img src=\"../images/info.png\" alt=\"\"></a></td>";
-				html += "<td><a href=\"edit.php?vehicle_widget&id="+vehicle.id+"\"><img src=\"../images/edit.png\" alt=\"\"></a></td>";
-				html += "<td><a href=\"delete.php?vehicle_widget&id="+vehicle.id+"\"><img src=\"../images/delete.png\" alt=\"\"></a></td>";
+				html += "<td><a href=\"vehicles/show.php?vehicle_widget&id="+vehicle.id+"\"><img src=\"images/info.png\" alt=\"\"></a></td>";
+				html += "<td><a href=\"vehicles/edit.php?vehicle_widget&id="+vehicle.id+"\"><img src=\"images/edit.png\" alt=\"\"></a></td>";
+				html += "<td><a href=\"vehicles/delete.php?vehicle_widget&id="+vehicle.id+"\"><img src=\"images/delete.png\" alt=\"\"></a></td>";
 				html += "</tr>";
 			}
 			

@@ -69,6 +69,7 @@
 
 	function has_unique_username($username, $current_id=0) {
 		$user = User::find_by_username($username);
+
 		if($user === false || $user->id == $current_id) {
 			// username is unique
 			return true;
